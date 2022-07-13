@@ -1,0 +1,29 @@
+---
+- name: apt-key adv
+  apt_key:
+      #keyserver: keys.gnupg.net
+      keyserver: hkp://keyserver.ubuntu.com
+      #id: 76634F92039C47F3
+      id: 76634F92039C47F3
+
+- name: add repository
+  apt_repository: repo='ppa:webupd8team/y-ppa-manager'
+
+- name: install y-ppa-manager
+  apt:
+      name: y-ppa-manager
+      state: present
+
+- name: add source list repository ubuntu
+  apt_repository:
+      repo: deb http://archive.canonical.com/ubuntu hardy partner
+      state: present
+
+- name: update repository
+  apt:
+      update_cache: yes
+
+- name: install spotipo
+  apt:
+      name: spotipo
+      state: present

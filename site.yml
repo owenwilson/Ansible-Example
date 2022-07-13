@@ -1,0 +1,34 @@
+---
+- hosts: spotipo
+  user: root
+  roles:
+   - spotipo
+  tags: spotipo
+
+- hosts: jenkins
+  user: ubuntu
+  roles:
+   - jenkins
+  tags: jenkins
+  become: yes
+
+- hosts: nginx
+  user: ubuntu
+  roles:
+   - nginx
+  tags: nginx
+  become: yes
+
+- hosts: docker
+  user: ubuntu
+  roles:
+    - docker
+  tags: docker
+  become: yes
+
+- hosts: raspberry
+  user: pi
+  roles:
+   - raspberry
+  tags: raspberry
+  become: yes

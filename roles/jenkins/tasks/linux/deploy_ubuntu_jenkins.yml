@@ -1,0 +1,19 @@
+- name: Install openjdk-8
+  apt:
+      name: openjdk-8-jdk
+      state: latest
+
+- name: Adding key repository of jenkins
+  shell: wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | apt-key add -
+
+- name: Adding binary to source list
+  shell: sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+- name: Update repository to distribution linux
+  apt:
+      update_cache: yes
+
+- name: Install jenkins
+  apt:
+      name: jenkins
+      state: latest

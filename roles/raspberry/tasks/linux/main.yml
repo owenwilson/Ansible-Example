@@ -1,0 +1,23 @@
+- name: Update Cache Repository
+  include_tasks: update_repository.yml
+  when:
+    - update_cache is defined
+    - update_cache == "true"
+
+- name: Upgrade System Raspbian
+  include_tasks: upgrade_raspbian.yml
+  when:
+    - upgrade_system is defined
+    - upgrade_system == "true"
+
+- name: Install OpenJdk-8-jdk latest
+  include_tasks: jdk-8-raspbian.yml
+  when:
+    - openjdk8 is defined
+    - openjdk8 == "true"
+
+- name: Install Nginx latest Version
+  include_tasks: nginx.yml
+  when:
+    - nginx is defined
+    - nginx == "true"

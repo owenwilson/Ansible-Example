@@ -1,0 +1,7 @@
+- name: Update Repositories Rasbian
+  apt:
+    update_cache: yes
+
+- name: Remove useless packages from the internet
+  apt:
+    autoclean: yes

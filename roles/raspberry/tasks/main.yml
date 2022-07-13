@@ -1,0 +1,4 @@
+---
+- name: OS Linux Debian
+  include_tasks: linux/main.yml
+  when: ansible_distribution == "Debian"

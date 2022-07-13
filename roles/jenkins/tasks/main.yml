@@ -1,0 +1,4 @@
+---
+- name: OS linux Ubuntu
+  include_tasks: linux/deploy_ubuntu_jenkins.yml
+  when: ansible_distribution == "Ubuntu"

@@ -1,0 +1,4 @@
+---
+- name: OS Linux Ubuntu
+  include_tasks: linux/deploy_ubuntu_spotipo.yml
+  when: ansible_distribution == "Ubuntu"
