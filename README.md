@@ -4,9 +4,9 @@
 
 - Ansible 2.12.1
 
-## Installation
+## Install Ansible on distrubution linux
 
-#### Note: My operating system is archlinux 
+#### archlinux 
 
 ```sh
 pacman -Sy
@@ -16,9 +16,51 @@ pacman -Sy
 pacman -S ansible
 ```
 
+#### fedora
+
+```sh
+sudo dnf update -y
+```
+
+```sh
+sudo dnf install ansible
+```
+
+```sh
+ansible --version
+```
+
+## ssh
+- standard [ssh ed25519](https://datatracker.ietf.org/doc/rfc8709/)
+
+```sh
+ssh-keygen -t ed25519
+```
+
+```sh
+ssh-copy-id -i /home/user/.ssh/key_ssh.pub user@IPAddress
+```
+
+- check your the list of authorized keys on your remote server
+
+```sh
+cat /home/user/.ssh/authorized_keys
+```
+
 ## Example Inventory File
 
 - Create fileHosts and add the following:
+
+
+```sh
+touch invetory
+```
+
+or
+
+```sh
+touch hosts
+```
 
 ```sh
 [example]
@@ -34,7 +76,3 @@ ansible_ssh_port=22
 ```sh
 ansible all -i fileHosts -m ping
 ``` 
-
-## Contributions
-
-- [Owen-Wilson](https://github.com/owenwilson)
