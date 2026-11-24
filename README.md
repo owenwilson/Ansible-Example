@@ -1,12 +1,8 @@
 # Ansible Playbooks
 
-## Install Ansible on distrubution linux
-
-## ansible version
-
 - Ansible 2.12.1
 
-## install Ansible on distrubution linux
+## install Ansible
 
 ### archlinux 
 
