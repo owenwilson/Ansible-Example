@@ -23,6 +23,7 @@ pacman -S ansible
 ```sh
 sudo dnf update -y
 ```
+
 ```sh
 sudo dnf install ansible
 ```
@@ -55,7 +56,6 @@ cat /home/user/.ssh/authorized_keys
 
 - Create fileHosts and add the following:
 
-
 ```sh
 touch invetory
 ```
@@ -86,9 +86,6 @@ ansible_ssh_user=vagrant
 ansible_ssh_port=22
 ```
 
-## ansible ping
-
-=======
 ## ansible
  
 ### example ansible ping hosts
